@@ -3,13 +3,23 @@ var express = require('express');
 var router = express.Router();
 var Event = require('../models/models').Event;
 
+router.param('id', function(req, res, next, id) {
+  Event.findById(id, function(err, doc) {
+    if(err) return next(err);
+    if(!doc) {
+      err = new Error('There is no event with this ID');
+      err.status = 404;
+      return next(err);
+    }
+    req.event = doc;
+    return next();
+  });
+});
+
 // GET /events/:id
 // Retrieves a specific event from DB
 router.get('/:id', function(req, res, next) {
-  res.json({
-    message: 'The GET request',
-    outcome: req.params.id
-  });
+  res.json(req.event);
 });
 
 

@@ -1,6 +1,7 @@
 'use strict';
 var express = require('express');
 var router = express.Router();
+var Event = require('../models/models').Event;
 
 // GET /events/:id
 // Retrieves a specific event from DB

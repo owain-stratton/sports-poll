@@ -9,6 +9,9 @@ var app = express();
 app.use(morgan('dev'));
 app.use(parser());
 
+// Connect to the Database
+require('./models/database');
+
 app.use('/events', routes);
 
 

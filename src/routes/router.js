@@ -5,7 +5,10 @@ var router = express.Router();
 // GET /events/:id
 // Retrieves a specific event from DB
 router.get('/:id', function(req, res, next) {
-  console.log('This was a GET request for event ID:', req.params.id);
+  res.json({
+    message: 'The GET request',
+    outcome: req.params.id
+  });
 });
 
 
@@ -20,10 +23,8 @@ router.post('/:id/vote-:outcome', function(req, res, next) {
     next(err);
   } else {
     res.json({
-      error: {
-        message: 'The POST request',
-        outcome: req.params.outcome
-      }
+      message: 'The POST request',
+      outcome: req.params.outcome
     });
   }
 

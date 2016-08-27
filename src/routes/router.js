@@ -14,7 +14,19 @@ router.get('/:id', function(req, res, next) {
 // POST events/:id/vote-draw
 // Vote on the outcome of a specific event
 router.post('/:id/vote-:outcome', function(req, res, next) {
-  console.log('This was a POST request with the outcome to be', req.params.outcome);
+  if(req.params.outcome.search(/^(home|draw|away)$/) === -1) {
+    var err = new Error('The vote you cast was not appropriate for the outcome');
+    err.status = 404;
+    next(err);
+  } else {
+    res.json({
+      error: {
+        message: 'The POST request',
+        outcome: req.params.outcome
+      }
+    });
+  }
+
 });
 
 

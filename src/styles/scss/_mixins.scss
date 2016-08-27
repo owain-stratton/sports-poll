@@ -1,0 +1,79 @@
+@mixin flagBackground($countries...) {
+  @each $country in $countries {
+    &.#{$country} {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 52.5px 35.25px;
+      background-image: url(../../assets/#{$country}-flag.png);
+    }
+  }
+}
+
+@mixin keyframes($animation-name) {
+   @-webkit-keyframes #{$animation-name}{
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+     @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+     @content;
+  }
+  @-o-keyframes #{$animation-name} {
+     @content;
+  }
+  @keyframes #{$animation-name} {
+     @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@mixin statusBgColor($colors...) {
+  @each $color in $colors {
+    @if $color == $orange {
+      &.not-started {
+        background-color: $color;
+      }
+    } @else if $color == $green {
+      &.started {
+        background-color: $color;
+        background: -webkit-radial-gradient(circle, lighten($color, 10%), $color);
+        background: -o-radial-gradient(circle, lighten($color, 10%), $color);
+        background: -moz-radial-gradient(circle, lighten($color, 10%), $color);
+        background: radial-gradient(circle, lighten($color, 10%), $color);
+        @include keyframes(status-flash) {
+          0%    { box-shadow: 0 0 3px $color; }
+          50%   { box-shadow: 0 0 40px lighten($color, 40%); }
+          100%  { box-shadow: 0 0 3px $color; }
+        };
+        @include animation('status-flash 1.5s infinite');
+      }
+    } @else if $color == $red {
+      &.finished {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@mixin sport-background-image($sport, $country) {
+  &.#{$sport}.#{$country} {
+    background-image: url('../../assets/' + $sport + '_' + $country + '_small.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @media screen and (min-width: 768px) {
+      background-image: url('../../assets/' + $sport + '_' + $country + '_large.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}

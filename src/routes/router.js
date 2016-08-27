@@ -33,12 +33,15 @@ router.post('/:id/vote-:outcome', function(req, res, next) {
     err.status = 404;
     next(err);
   } else {
-    res.json({
-      message: 'The POST request',
-      outcome: req.params.outcome
-    });
+    req.outcomeVote = req.params.outcome;
+    next();
   }
-
+},
+function(req, res, next) {
+  req.event.vote(req.outcomeVote, function(err, event) {
+    if(err) return next(err);
+    res.json(event);
+  });
 });
 
 

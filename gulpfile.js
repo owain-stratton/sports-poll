@@ -41,8 +41,8 @@ gulp.task('compileSass', function() {
 
 // watch files for changes
 gulp.task('watch', function() {
-  // gulp.watch('package.json', ['vendors']);
-  // gulp.watch('src/app/**', ['app']);
+  gulp.watch('package.json', ['vendors']);
+  gulp.watch('src/app/**', ['app']);
   gulp.watch('src/styles/scss/*.scss', ['compileSass']);
 });
 

@@ -247,8 +247,15 @@ h5 {
   right: 0;
   z-index: 0;
   @include sport-background-image('football', 'sweden');
+  @include sport-background-image('football', 'france');
+  @include sport-background-image('football', 'england');
   @include sport-background-image('tennis', 'sweden');
   @include sport-background-image('tennis', 'france');
+  @include sport-background-image('tennis', 'england');
+  @include sport-background-image('snooker', 'sweden');
+  @include sport-background-image('snooker', 'england');
+  @include sport-background-image('icehockey', 'england');
+  @include sport-background-image('handball', 'sweden');
   &::before {
     background-image: url(../../assets/jumbotron-pattern.png);
     content: '';

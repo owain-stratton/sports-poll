@@ -356,6 +356,28 @@ h5 {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover; } }
+  .sport-background.football.france {
+    background-image: url("../../assets/football_france_small.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+    @media screen and (min-width: 768px) {
+      .sport-background.football.france {
+        background-image: url("../../assets/football_france_large.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; } }
+  .sport-background.football.england {
+    background-image: url("../../assets/football_england_small.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+    @media screen and (min-width: 768px) {
+      .sport-background.football.england {
+        background-image: url("../../assets/football_england_large.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; } }
   .sport-background.tennis.sweden {
     background-image: url("../../assets/tennis_sweden_small.jpg");
     background-repeat: no-repeat;
@@ -375,6 +397,61 @@ h5 {
     @media screen and (min-width: 768px) {
       .sport-background.tennis.france {
         background-image: url("../../assets/tennis_france_large.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; } }
+  .sport-background.tennis.england {
+    background-image: url("../../assets/tennis_england_small.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+    @media screen and (min-width: 768px) {
+      .sport-background.tennis.england {
+        background-image: url("../../assets/tennis_england_large.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; } }
+  .sport-background.snooker.sweden {
+    background-image: url("../../assets/snooker_sweden_small.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+    @media screen and (min-width: 768px) {
+      .sport-background.snooker.sweden {
+        background-image: url("../../assets/snooker_sweden_large.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; } }
+  .sport-background.snooker.england {
+    background-image: url("../../assets/snooker_england_small.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+    @media screen and (min-width: 768px) {
+      .sport-background.snooker.england {
+        background-image: url("../../assets/snooker_england_large.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; } }
+  .sport-background.icehockey.england {
+    background-image: url("../../assets/icehockey_england_small.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+    @media screen and (min-width: 768px) {
+      .sport-background.icehockey.england {
+        background-image: url("../../assets/icehockey_england_large.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; } }
+  .sport-background.handball.sweden {
+    background-image: url("../../assets/handball_sweden_small.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+    @media screen and (min-width: 768px) {
+      .sport-background.handball.sweden {
+        background-image: url("../../assets/handball_sweden_large.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover; } }

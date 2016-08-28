@@ -12,6 +12,8 @@ app.use(parser());
 // Connect to the Database
 require('./models/database');
 
+app.use('/', express.static('public'));
+
 app.use('/events', routes);
 
 

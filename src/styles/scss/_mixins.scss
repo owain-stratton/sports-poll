@@ -38,7 +38,7 @@
 @mixin statusBgColor($colors...) {
   @each $color in $colors {
     @if $color == $orange {
-      &.not-started {
+      &.not_started {
         background-color: $color;
       }
     } @else if $color == $green {

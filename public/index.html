@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="sportsPollApp">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,17 +16,17 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
 <link rel="stylesheet" href="styles/css/app.css" />
 </head>
-<body ng-app="sportsPollApp" ng-cloak ng-controller="eventCtrl">
+<body ng-cloak ng-controller="eventCtrl">
 
   <div class="header">
     <div class="container">
-      <div class="country-flag swe">
+      <div class="country-flag {{ flag }}">
         <!-- IMG for Flag goes here -->
       </div>
       <div class="sport">
-        <h2>Tennis</h2>
+        <h2>{{ event.sport }}</h2>
       </div>
-      <div class="game-status started">
+      <div class="game-status {{ gameStatus }}">
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@
       <div class="team-content home">
         <div class="content-info home">
           <h5>home&#58;</h4>
-          <h1>Clayton, Scott</h1>
+          <h1>{{ event.homeName }}</h1>
         </div>
       </div>
     </div>
@@ -48,23 +48,23 @@
       <div class="team-content away">
         <div class="content-info away">
           <h5>away&#58;</h4>
-          <h1>Mridha, J</h1>
+          <h1>{{ event.awayName }}</h1>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="sport-background tennis france"></div>
+  <div class="sport-background {{ sport }} {{ country }}"></div>
 
   <div class="vote-container">
     <ul class="vote-list">
-      <li class="vote-option">
+      <li class="vote-option" ng-click="postVote('home', $event)" ng-class="{active: homeVote}">
         <div class="vote-choice">Home</div>
       </li>
-      <li class="vote-option">
+      <li class="vote-option" ng-click="postVote('draw', $event)" ng-class="{active: drawVote}">
         <div class="vote-choice">Draw</div>
       </li>
-      <li class="vote-option">
+      <li class="vote-option" ng-click="postVote('away', $event)" ng-class="{active: awayVote}">
         <div class="vote-choice">Away</div>
       </li>
       <li class="user-prompt">

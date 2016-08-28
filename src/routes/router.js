@@ -16,10 +16,21 @@ router.param('id', function(req, res, next, id) {
   });
 });
 
-// GET /events/:id
-// Retrieves a specific event from DB
-router.get('/:id', function(req, res, next) {
-  res.json(req.event);
+// GET /events
+// Retrieves a a random event from DB
+router.get('/', function(req, res, next) {
+  Event.aggregate([
+    {$sample: { size: 1 }}
+  ], function(err, doc) {
+    if(err) return next(err);
+    if(!doc) {
+      err = new Error('There is no event with this ID');
+      err.status = 404;
+      return next(err);
+    }
+    req.event = doc
+    res.json(req.event);
+  });
 });
 
 

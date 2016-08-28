@@ -17,7 +17,7 @@ gulp.task('vendors', function() {
     .require(dependencies)
     .bundle()
     .pipe(source('vendor.bundle.js'))
-    .pipe(gulp.dest(__dirname + '/src/scripts/libs'))
+    .pipe(gulp.dest(__dirname + '/public/scripts/libs'))
 });
 
 // browserify compile app scripts
@@ -27,7 +27,7 @@ gulp.task('app', function() {
     .bundle()
     .pipe(source('app.bundle.js'))
     .pipe(maps.write('./'))
-    .pipe(gulp.dest(__dirname + '/src/scripts'))
+    .pipe(gulp.dest(__dirname + '/public/scripts'))
 });
 
 // compile css from sass
@@ -36,7 +36,7 @@ gulp.task('compileSass', function() {
     .pipe(maps.init())
     .pipe(sass())
     .pipe(maps.write('./'))
-    .pipe(gulp.dest(__dirname + '/src/styles/css'))
+    .pipe(gulp.dest(__dirname + '/public/styles/css'))
 });
 
 // watch files for changes

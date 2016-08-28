@@ -41,6 +41,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important; }
+
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
@@ -102,7 +105,7 @@ h5 {
       height: 22px;
       border-radius: 50%;
       transform: translateY(-50%); }
-      .header .container .game-status.not-started {
+      .header .container .game-status.not_started {
         background-color: #F77611; }
       .header .container .game-status.finished {
         background-color: #E12528; }
@@ -174,11 +177,11 @@ h5 {
         background-position: center;
         background-size: 52.5px 35.25px;
         background-image: url(../../assets/fra-flag.png); }
-      .header .container .country-flag.uk {
+      .header .container .country-flag.eng {
         background-repeat: no-repeat;
         background-position: center;
         background-size: 52.5px 35.25px;
-        background-image: url(../../assets/uk-flag.png); }
+        background-image: url(../../assets/eng-flag.png); }
   .header .sport h2 {
     text-align: center; }
 
@@ -433,14 +436,14 @@ h5 {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover; } }
-  .sport-background.icehockey.england {
-    background-image: url("../../assets/icehockey_england_small.jpg");
+  .sport-background.ice_hockey.england {
+    background-image: url("../../assets/ice_hockey_england_small.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; }
     @media screen and (min-width: 768px) {
-      .sport-background.icehockey.england {
-        background-image: url("../../assets/icehockey_england_large.jpg");
+      .sport-background.ice_hockey.england {
+        background-image: url("../../assets/ice_hockey_england_large.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover; } }

@@ -1,3 +1,7 @@
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
 body {
   font-family: $font;
   font-weight: $fontReg;
@@ -66,7 +70,7 @@ h5 {
       width: 20%;
       height: 80%;
       transform: translateY(-50%);
-      @include flagBackground('swe', 'fra', 'uk');
+      @include flagBackground('swe', 'fra', 'eng');
     }
   }
   .sport h2 {
@@ -254,7 +258,7 @@ h5 {
   @include sport-background-image('tennis', 'england');
   @include sport-background-image('snooker', 'sweden');
   @include sport-background-image('snooker', 'england');
-  @include sport-background-image('icehockey', 'england');
+  @include sport-background-image('ice_hockey', 'england');
   @include sport-background-image('handball', 'sweden');
   &::before {
     background-image: url(../../assets/jumbotron-pattern.png);

@@ -4,6 +4,7 @@ var gulp          = require('gulp'),
     source        = require('vinyl-source-stream'),
     maps          = require('gulp-sourcemaps'),
     uglify        = require('gulp-uglify'),
+    cleanCSS      = require('gulp-clean-css'),
     rename        = require('gulp-rename'),
     sass          = require('gulp-sass');
 
@@ -47,9 +48,31 @@ gulp.task('watch', function() {
 });
 
 // minify js scripts
+gulp.task('minifyVendorScripts', function() {
+  return gulp.src('public/scripts/libs/vendor.bundle.js')
+    .pipe(uglify())
+    .pipe(rename('vendor.bundle.min.js'))
+    .pipe(gulp.dest('public/scripts/libs'));
+});
+
+gulp.task('minifyAppScripts', function() {
+  return gulp.src('public/scripts/app.bundle.js')
+    .pipe(uglify())
+    .pipe(rename('app.bundle.min.js'))
+    .pipe(gulp.dest('public/scripts'));
+});
+
 
 // minify compiled css
+gulp.task('minifyCSS', function() {
+  return gulp.src('public/styles/css/app.css')
+    .pipe(cleanCSS())
+    .pipe(rename('app.min.css'))
+    .pipe(gulp.dest('public/styles/css'));
+});
+
 
 // build dist folder for completion
+gulp.task('build', ['minifyVendorScripts', 'minifyAppScripts', 'minifyCSS']);
 
 gulp.task('serve', ['watch', 'compileSass', 'app', 'vendors']);

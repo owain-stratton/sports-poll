@@ -49,7 +49,6 @@ controllers.controller('eventCtrl', function($scope, eventsFactory) {
     setTimeout(function() {
       eventsFactory.getEvent().then(successResponse, errorResponse);
     }, 1000);
-
   };
 
   var successResponse = function(response) {

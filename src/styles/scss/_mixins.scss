@@ -40,6 +40,16 @@
     @if $color == $orange {
       &.not_started {
         background-color: $color;
+        background: -webkit-radial-gradient(circle, lighten($color, 10%), $color);
+        background: -o-radial-gradient(circle, lighten($color, 10%), $color);
+        background: -moz-radial-gradient(circle, lighten($color, 10%), $color);
+        background: radial-gradient(circle, lighten($color, 10%), $color);
+        @include keyframes(status-flash) {
+          0%    { box-shadow: 0 0 3px $color; }
+          50%   { box-shadow: 0 0 40px lighten($color, 40%); }
+          100%  { box-shadow: 0 0 3px $color; }
+        };
+        @include animation('status-flash 1.5s infinite');
       }
     } @else if $color == $green {
       &.started {
@@ -58,6 +68,16 @@
     } @else if $color == $red {
       &.finished {
         background-color: $color;
+        background: -webkit-radial-gradient(circle, lighten($color, 10%), $color);
+        background: -o-radial-gradient(circle, lighten($color, 10%), $color);
+        background: -moz-radial-gradient(circle, lighten($color, 10%), $color);
+        background: radial-gradient(circle, lighten($color, 10%), $color);
+        @include keyframes(status-flash) {
+          0%    { box-shadow: 0 0 3px $color; }
+          50%   { box-shadow: 0 0 40px lighten($color, 40%); }
+          100%  { box-shadow: 0 0 3px $color; }
+        };
+        @include animation('status-flash 1.5s infinite');
       }
     }
   }

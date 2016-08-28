@@ -152,6 +152,7 @@ h5 {
           color: darken($blue, 10%);
           text-shadow: 0 0 18px $white;
           margin-bottom: $baseDistance / 2;
+          font-weight: $fontXBold;
         }
         & h1 {
           text-shadow: 0 0 38px darken($white, 80%);

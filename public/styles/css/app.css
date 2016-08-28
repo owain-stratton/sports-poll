@@ -106,9 +106,107 @@ h5 {
       border-radius: 50%;
       transform: translateY(-50%); }
       .header .container .game-status.not_started {
-        background-color: #F77611; }
+        background-color: #F77611;
+        background: -webkit-radial-gradient(circle, #f99242, #F77611);
+        background: -o-radial-gradient(circle, #f99242, #F77611);
+        background: -moz-radial-gradient(circle, #f99242, #F77611);
+        background: radial-gradient(circle, #f99242, #F77611);
+        -webkit-animation: status-flash 1.5s infinite;
+        -moz-animation: status-flash 1.5s infinite;
+        -ms-animation: status-flash 1.5s infinite;
+        -o-animation: status-flash 1.5s infinite;
+        animation: status-flash 1.5s infinite; }
+
+@-webkit-keyframes status-flash {
+  0% {
+    box-shadow: 0 0 3px #F77611; }
+  50% {
+    box-shadow: 0 0 40px #fee8d6; }
+  100% {
+    box-shadow: 0 0 3px #F77611; } }
+
+@-moz-keyframes status-flash {
+  0% {
+    box-shadow: 0 0 3px #F77611; }
+  50% {
+    box-shadow: 0 0 40px #fee8d6; }
+  100% {
+    box-shadow: 0 0 3px #F77611; } }
+
+@-ms-keyframes status-flash {
+  .header .container .game-status.not_started 0% {
+    box-shadow: 0 0 3px #F77611; }
+  .header .container .game-status.not_started 50% {
+    box-shadow: 0 0 40px #fee8d6; }
+  .header .container .game-status.not_started 100% {
+    box-shadow: 0 0 3px #F77611; } }
+
+@-o-keyframes status-flash {
+  0% {
+    box-shadow: 0 0 3px #F77611; }
+  50% {
+    box-shadow: 0 0 40px #fee8d6; }
+  100% {
+    box-shadow: 0 0 3px #F77611; } }
+
+@keyframes status-flash {
+  0% {
+    box-shadow: 0 0 3px #F77611; }
+  50% {
+    box-shadow: 0 0 40px #fee8d6; }
+  100% {
+    box-shadow: 0 0 3px #F77611; } }
       .header .container .game-status.finished {
-        background-color: #E12528; }
+        background-color: #E12528;
+        background: -webkit-radial-gradient(circle, #e75254, #E12528);
+        background: -o-radial-gradient(circle, #e75254, #E12528);
+        background: -moz-radial-gradient(circle, #e75254, #E12528);
+        background: radial-gradient(circle, #e75254, #E12528);
+        -webkit-animation: status-flash 1.5s infinite;
+        -moz-animation: status-flash 1.5s infinite;
+        -ms-animation: status-flash 1.5s infinite;
+        -o-animation: status-flash 1.5s infinite;
+        animation: status-flash 1.5s infinite; }
+
+@-webkit-keyframes status-flash {
+  0% {
+    box-shadow: 0 0 3px #E12528; }
+  50% {
+    box-shadow: 0 0 40px #fad8d9; }
+  100% {
+    box-shadow: 0 0 3px #E12528; } }
+
+@-moz-keyframes status-flash {
+  0% {
+    box-shadow: 0 0 3px #E12528; }
+  50% {
+    box-shadow: 0 0 40px #fad8d9; }
+  100% {
+    box-shadow: 0 0 3px #E12528; } }
+
+@-ms-keyframes status-flash {
+  .header .container .game-status.finished 0% {
+    box-shadow: 0 0 3px #E12528; }
+  .header .container .game-status.finished 50% {
+    box-shadow: 0 0 40px #fad8d9; }
+  .header .container .game-status.finished 100% {
+    box-shadow: 0 0 3px #E12528; } }
+
+@-o-keyframes status-flash {
+  0% {
+    box-shadow: 0 0 3px #E12528; }
+  50% {
+    box-shadow: 0 0 40px #fad8d9; }
+  100% {
+    box-shadow: 0 0 3px #E12528; } }
+
+@keyframes status-flash {
+  0% {
+    box-shadow: 0 0 3px #E12528; }
+  50% {
+    box-shadow: 0 0 40px #fad8d9; }
+  100% {
+    box-shadow: 0 0 3px #E12528; } }
       .header .container .game-status.started {
         background-color: #4DAA2F;
         background: -webkit-radial-gradient(circle, #63cb41, #4DAA2F);
@@ -267,7 +365,8 @@ h5 {
         .event .team-container .team-content .content-info h5 {
           color: #004572;
           text-shadow: 0 0 18px #FFFFFF;
-          margin-bottom: 6px; }
+          margin-bottom: 6px;
+          font-weight: 900; }
         .event .team-container .team-content .content-info h1 {
           text-shadow: 0 0 38px #333333;
           font-weight: 700; }

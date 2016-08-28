@@ -77,3 +77,20 @@
     }
   }
 }
+
+@mixin team-separator {
+  background: linear-gradient(to right,
+  rgba(206,206,206,0) 0,
+  #cecece 20%,
+  #cecece 80%,
+  rgba(206,206,206,0) 100%);
+  content: '';
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  width: 35%;
+  z-index: 998;
+  @media screen and (min-width: 768px) {
+    width: 45%;
+  }
+}

@@ -4,6 +4,22 @@ body {
   line-height: 1.6;
   box-sizing: border-box;
 }
+
+h1, h2, h4, h5 {
+  text-transform: uppercase;
+  font-weight: $fontReg;
+  color: $white;
+  letter-spacing: 0.8px;
+}
+
+h1 { font-size: $baseFont * 1.7; }
+h2 { font-size: $baseFont * 1.6; }
+h4 { font-size: $baseFont * 1.4; }
+h5 {
+  font-size: $baseFont / 1.2;
+  font-weight: $fontBold;
+}
+
 .header {
   background-color: $grey;
   color: $white;
@@ -54,12 +70,174 @@ body {
     }
   }
   .sport h2 {
-    font-size: $baseFont * 1.6;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
     text-align: center;
   }
 }
+
+.event {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  &::before {
+    left: 10px;
+    @include team-separator;
+  }
+  &::after {
+    right: 10px;
+    @include team-separator;
+  }
+  & .versus-container {
+    display: inline;
+    padding: $baseDistance / 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: $white solid 2px;
+    border-radius: 50px;
+    z-index: 999;
+    box-shadow: 0 0 10px darken($white, 20%);
+    background-color: rgba(0,0,0,0.2);
+    & .versus-content {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      & h4 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+    }
+  }
+  & .team-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50%;
+    z-index: 999;
+    &.home {
+      top: 0;
+    }
+    &.away {
+      bottom: 0;
+    }
+    & .team-content {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      & .content-info {
+        position: absolute;
+        left: 50%;
+        text-align: center;
+        width: 100%;
+        &.home {
+          top: 60%;
+          transform: translate(-50%, -60%);
+        }
+        &.away {
+          top: 40%;
+          transform: translate(-50%, -40%);
+        }
+        & h5 {
+          color: darken($blue, 10%);
+          text-shadow: 0 0 18px $white;
+          margin-bottom: $baseDistance / 2;
+        }
+        & h1 {
+          text-shadow: 0 0 38px darken($white, 80%);
+          font-weight: $fontBold;
+        }
+      }
+    }
+  }
+}
+
+.vote-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: $blue;
+  z-index: 1001;
+  transition: all .3s ease-in-out;
+  @media screen and (min-width: 768px) {
+    width: 400px;
+    bottom: 22px;
+    margin: 0 auto;
+    box-shadow: 0 0 22px lighten($grey, 20%);
+  }
+  & .vote-list {
+    list-style: none;
+    overflow: hidden;
+    height: 100%;
+    & li.vote-option {
+      float: left;
+      width: 33.33%;
+      position: relative;
+      height: 100%;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      transition: background .3s ease-in-out;
+      &:hover {
+        background-color: darken($blue, 10%);
+      }
+      &.active {
+        background-color: darken($blue, 10%);
+        & .vote-choice {
+          text-shadow: 0 0 18px $white;
+        }
+      }
+      &.inactive {
+        opacity: 0.2;
+      }
+      &:nth-child(1)::after, &:nth-child(2)::after {
+        content: '';
+        width: 2px;
+        height: 100%;
+        background-color: darken($blue, 5%);
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 999;
+      }
+      & .vote-choice {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $white;
+        font-size: $baseFont * 1.3;
+        font-weight: $fontBold;
+        text-shadow: 0 0 10px lighten($grey, 10%);
+      }
+    }
+    & .user-prompt {
+      width: 100%;
+      position: absolute;
+      top: -75%;
+      left: 0;
+      height: 75%;
+      background-color: darken($blue, 5%);
+      box-shadow: 0 0 22px lighten($grey, 20%);
+      & div {
+        text-align: center;
+        font-weight: $fontReg;
+        color: $white;
+        letter-spacing: 1px;
+        padding: $baseDistance / 1.5;
+      }
+    }
+  }
+}
+
 
 .sport-background {
   position: absolute;
@@ -70,4 +248,13 @@ body {
   z-index: 0;
   @include sport-background-image('football', 'sweden');
   @include sport-background-image('tennis', 'sweden');
+  @include sport-background-image('tennis', 'france');
+  &::before {
+    background-image: url(../../assets/jumbotron-pattern.png);
+    content: '';
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 100%;
+  }
 }

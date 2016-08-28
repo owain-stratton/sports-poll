@@ -47,6 +47,25 @@ body {
   line-height: 1.6;
   box-sizing: border-box; }
 
+h1, h2, h4, h5 {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #FFFFFF;
+  letter-spacing: 0.8px; }
+
+h1 {
+  font-size: 27.2px; }
+
+h2 {
+  font-size: 25.6px; }
+
+h4 {
+  font-size: 22.4px; }
+
+h5 {
+  font-size: 13.33333px;
+  font-weight: 700; }
+
 .header {
   background-color: #161616;
   color: #FFFFFF;
@@ -161,10 +180,163 @@ body {
         background-size: 52.5px 35.25px;
         background-image: url(../../assets/uk-flag.png); }
   .header .sport h2 {
-    font-size: 25.6px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
     text-align: center; }
+
+.event {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+  .event::before {
+    left: 10px;
+    background: linear-gradient(to right, rgba(206, 206, 206, 0) 0, #cecece 20%, #cecece 80%, rgba(206, 206, 206, 0) 100%);
+    content: '';
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 35%;
+    z-index: 998; }
+    @media screen and (min-width: 768px) {
+      .event::before {
+        width: 45%; } }
+  .event::after {
+    right: 10px;
+    background: linear-gradient(to right, rgba(206, 206, 206, 0) 0, #cecece 20%, #cecece 80%, rgba(206, 206, 206, 0) 100%);
+    content: '';
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 35%;
+    z-index: 998; }
+    @media screen and (min-width: 768px) {
+      .event::after {
+        width: 45%; } }
+  .event .versus-container {
+    display: inline;
+    padding: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: #FFFFFF solid 2px;
+    border-radius: 50px;
+    z-index: 999;
+    box-shadow: 0 0 10px #cccccc;
+    background-color: rgba(0, 0, 0, 0.2); }
+    .event .versus-container .versus-content {
+      position: relative;
+      height: 100%;
+      width: 100%; }
+      .event .versus-container .versus-content h4 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center; }
+  .event .team-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50%;
+    z-index: 999; }
+    .event .team-container.home {
+      top: 0; }
+    .event .team-container.away {
+      bottom: 0; }
+    .event .team-container .team-content {
+      position: relative;
+      height: 100%;
+      width: 100%; }
+      .event .team-container .team-content .content-info {
+        position: absolute;
+        left: 50%;
+        text-align: center;
+        width: 100%; }
+        .event .team-container .team-content .content-info.home {
+          top: 60%;
+          transform: translate(-50%, -60%); }
+        .event .team-container .team-content .content-info.away {
+          top: 40%;
+          transform: translate(-50%, -40%); }
+        .event .team-container .team-content .content-info h5 {
+          color: #004572;
+          text-shadow: 0 0 18px #FFFFFF;
+          margin-bottom: 6px; }
+        .event .team-container .team-content .content-info h1 {
+          text-shadow: 0 0 38px #333333;
+          font-weight: 700; }
+
+.vote-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #0064A5;
+  z-index: 1001;
+  transition: all .3s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .vote-container {
+      width: 400px;
+      bottom: 22px;
+      margin: 0 auto;
+      box-shadow: 0 0 22px #494949; } }
+  .vote-container .vote-list {
+    list-style: none;
+    overflow: hidden;
+    height: 100%; }
+    .vote-container .vote-list li.vote-option {
+      float: left;
+      width: 33.33%;
+      position: relative;
+      height: 100%;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      transition: background .3s ease-in-out; }
+      .vote-container .vote-list li.vote-option:hover {
+        background-color: #004572; }
+      .vote-container .vote-list li.vote-option.active {
+        background-color: #004572; }
+        .vote-container .vote-list li.vote-option.active .vote-choice {
+          text-shadow: 0 0 18px #FFFFFF; }
+      .vote-container .vote-list li.vote-option.inactive {
+        opacity: 0.2; }
+      .vote-container .vote-list li.vote-option:nth-child(1)::after, .vote-container .vote-list li.vote-option:nth-child(2)::after {
+        content: '';
+        width: 2px;
+        height: 100%;
+        background-color: #00558c;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 999; }
+      .vote-container .vote-list li.vote-option .vote-choice {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #FFFFFF;
+        font-size: 20.8px;
+        font-weight: 700;
+        text-shadow: 0 0 10px #303030; }
+    .vote-container .vote-list .user-prompt {
+      width: 100%;
+      position: absolute;
+      top: -75%;
+      left: 0;
+      height: 75%;
+      background-color: #00558c;
+      box-shadow: 0 0 22px #494949; }
+      .vote-container .vote-list .user-prompt div {
+        text-align: center;
+        font-weight: 400;
+        color: #FFFFFF;
+        letter-spacing: 1px;
+        padding: 8px; }
 
 .sport-background {
   position: absolute;
@@ -195,5 +367,23 @@ body {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover; } }
+  .sport-background.tennis.france {
+    background-image: url("../../assets/tennis_france_small.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+    @media screen and (min-width: 768px) {
+      .sport-background.tennis.france {
+        background-image: url("../../assets/tennis_france_large.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; } }
+  .sport-background::before {
+    background-image: url(../../assets/jumbotron-pattern.png);
+    content: '';
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 100%; }
 
 /*# sourceMappingURL=app.css.map */

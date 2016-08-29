@@ -31,6 +31,7 @@ The project took me two working days to complete and is currently in a state of 
 As mentioned the tools used in this project have been MongoDB, ExpressJS, AngularJS, NodeJS and Sass. I used GulpJS as my task runner, concatenating js files as well as compiling scss files and use browserify to bundle up dependencies whilst I was developing. I use Atom as my text editor.
 
 My method and approach to create a working version of this project involved the following order:
+
 1. Decide upon libraries and stack for project framework
 2. Begin with initialising npm and git on the project for package management along with version control
 3. Plan the backend for building a REST API from the project data
